@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A Software Engineer" />
+
+    <title>Godstrump George | Software Engineer</title>
+
+    <link rel="icon" href="../public/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/favicon.svg" type="image/svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <div id="app">
+      <nav class="main-nav">
+        <div class="logo colored">
+          <!-- <img src="images/jk-noshadow.svg" alt="jk" /> -->
+          <h3>Godstrump George</h3>
+        </div>
+
+        <div @click="openNav" class="hamburger">
+          <div class="harmburger__line line--1"></div>
+          <div class="harmburger__line line--2"></div>
+          <div class="harmburger__line line--3"></div>
+        </div>
+        <article class="nav__menu">
+            <sidenav :show="pageNav" />
+        </article>
+      </nav>
+      <div class="row" v-scroll="handleScroll">
+        <main id="home">
+          <section class="hero" id="intro">
+            <div class="container">
+              <div class="hero__intro">
+                <div class="hero__image">
+                  <img src="./assets/images/me.jpg" alt="astounded boy" />
+                  <!-- <div id="earth"></div> -->
+                </div>
+
+                <div class="hero__name">
+                  <small class="code-text"> &lt; h1 &gt; </small>
+                  <h1 class="intro__title">
+                    Hi,<br />
+                    i'm <span class="colored">Godstrump</span> <br />
+                    a <span class="colored">Software</span> <br />
+                    <span class="colored">Engineer</span>
+                  </h1>
+                  <small class="code-text"> &lt; /h1 &gt; </small>
+                </div>
+
+                <div class="hero__passion">
+                  <small class="code-text"> &lt; p &gt; </small>
+                  <p class="intro__text">
+                    <!-- I'm passionate about creating clean and easy to use I'm -->
+                    Passionate about turning
+                    <span class="colored">ideas</span> into
+                    <span class="colored samples">reality</span> for my
+                    <span class="notcolored">clients</span>.
+                  </p>
+                  <small class="code-text"> &lt; /p &gt; </small>
+                </div>
+
+                <div class="hero__contact">
+                  <small class="code-text btn-code"> &lt; button &gt; </small>
+                  <a href="#contact" class="btn"> Contact Me </a>
+                  <small class="code-text btn-code"> &lt; /button &gt; </small>
+                </div>
+
+                <div class="col__scroll">
+                  <div class="scroll__down">
+                    scroll
+                    <p class="scroll__item__right colored">
+                      <ion-icon
+                        class="scroll"
+                        name="arrow-forward-outline"
+                      ></ion-icon>
+                    </p>
+                  </div>
+                  <small class="code-text"> &lt; /html &gt; </small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="projects" id="projects">
+            <div class="container">
+              <h2 class="section__title">Projects</h2>
+              <p class="section__description">A few selected projects</p>
+
+              <div class="project__list">
+                <projectcard
+                  v-for="project in projects"
+                  class="project"
+                  :projectname="project.name"
+                  :image="project.image"
+                  :tech="project.tech"
+                  :projectlink="project.link"
+                />
+
+                <!-- https://image.freepik.com/free-vector/burger-landing-page-mobile_1361-888.jpg -->
+              </div>
+            </div>
+          </section>
+          <section class="skills" id="skills">
+            <div class="container">
+              <h2 class="section__title">my skills</h2>
+              <p class="section__description">
+                Here are a list of tools, languages, and frameworks I use for development. Constantly learning and improving myself.
+              </p>
+              <article class="skills__grid">
+                <img src="./assets/images/skills/Group28.svg" alt="html " />
+                <img src="./assets/images/skills/Group29.svg" alt="sass" />
+                <img height="90" src="./assets/images/skills/Group23.svg" alt="aws" />
+                <img height="90" src="./assets/images/skills/Group25.svg" alt="Kubernetes" />
+                <img height="90" src="./assets/images/skills/Group24.svg" alt="ts" />
+                <img src="./assets/images/skills/Group30.svg" alt="css" />
+                <img src="./assets/images/skills/Group31.svg" alt="javascript" />
+                <img src="./assets/images/skills/Group32.svg" alt="react" />
+                <img src="./assets/images/skills/Group33.svg" alt="git" />
+                <img src="./assets/images/skills/Group34.svg" alt="rest api" />
+                <span class="icon-new"><ion-icon name="logo-angular"></ion-icon><span>Angular</span></span>
+                <span class="icon-new"><ion-icon name="logo-python"></ion-icon><span>Python</span></span>
+                <span class="icon-new"><ion-icon name="logo-nodejs"></ion-icon><span>NodeJS</span></span>
+                <span class="icon-new"><ion-icon name="logo-docker"></ion-icon><span>Docker</span></span>
+                <span class="icon-new"><ion-icon name="logo-wordpress"></ion-icon><span>Wordpress</span></span>
+                <span class="icon-new"><ion-icon name="logo-pwa"></ion-icon><span>PWA</span></span>
+                <span class="icon-new"><ion-icon name="logo-ionic"></ion-icon><span>Ionic</span></span>
+                <span class="icon-new"><ion-icon name="logo-firebase"></ion-icon><span>Firebase</span></span>
+                <span class="icon-new"><ion-icon name="logo-react"></ion-icon><span style="font-size: 7px;">React Native</span></span>
+                <span class="icon-new"><ion-icon name="logo-vue"></ion-icon><span>Vue</span></span>
+              </article>
+            </div>
+          </section>
+          <section class="about" id="about">
+            <div class="container">
+              <h2 class="section__title">about me</h2>
+              <p class="section__description">
+                Software Engineer with over
+                <span class="colored">5 years</span> of coding experience. I hold a bachelor's degree in <span class="colored">Computer Engineering</span>. And when I am not working, I love watching <span class="colored">Anime</span> or playing <span class="colored">video games</span>.
+              </p>
+              <div class="profile">
+                  <img src="./assets/images/me.jpg" alt="man" />
+              </div>
+              <p class="about__text"></p>
+            </div>
+          </section>
+          <section class="contact" id="contact">
+            <div class="container">
+              <h2 class="section__title">Contact</h2>
+              <p>want to have a chat? I’m always available.</p>
+              <form id="contactForm" method="post" data-netlify="true">
+                <input
+                  type="text"
+                  name="name"
+                  id=""
+                  placeholder="name"
+                  autocomplete="off"
+                />
+                <input type="email" name="email" id="" placeholder="email" />
+                <textarea
+                  name="message"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="message"
+                  autocomplete="off"
+                ></textarea>
+                <button id="submitBtn" class="btn" type="submit">send</button>
+              </form>
+              <!-- <div class="social__media">
+                <a href="https://linkedin.com/in/devjohn-okwuchukwu">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="https://github.com/jhnkreatur"
+                  ><ion-icon name="logo-github"></ion-icon>
+                </a>
+              </div> -->
+            </div>
+          </section>
+        </main>
+        <aside>
+          <article class="sidebar__menu">
+            <sidenav />
+          </article>
+        </aside>
+      </div>
+    </div>
+
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
