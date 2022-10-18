@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "start": "concurrently \"npm run sass\" \"npm run serve\"",
     "serve": "live-server --open=/src/app.html --ignore=.git,node_modules",
     "sass": "node-sass -i -w --output-style=compressed src/styles/style.scss src/styles/style.min.css",
